@@ -24,12 +24,6 @@
 export default {
   name: "LoadingScreen",
 
-  mounted: function() {
-    // setInterval(() => {
-    //   this.progress({ value: test, reason: "Loading something..." });
-    //   test = test + 20;
-    // }, 1000);
-  },
   data() {
     return {
       progressValue: 0,

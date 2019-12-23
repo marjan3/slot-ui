@@ -1,4 +1,6 @@
-# slot-game-engine
+# Slot UI
+
+Simple UI for slot games
 
 ## Project setup
 
@@ -24,8 +26,16 @@ yarn build
 yarn lint
 ```
 
-cd
+### Run example with
+
+```
+yarn example
+```
 
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## License
+
+MIT © [Marjan Tanevski](marjantanevski@outlook.com)
