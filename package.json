@@ -1,13 +1,13 @@
 {
   "name": "@mtanevski/slot-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "example": "cd example/ && yarn start",
-    "build:bundle": "rm -rf dist/ && vue-cli-service build --target lib --name slot-ui src/slot-ui.js"
+    "build:prod": "rm -rf dist/ && vue-cli-service build --target lib --name slot-ui src/slot-ui.js"
   },
   "license": "MIT",
   "main": "./dist/slot-ui.common.js",
