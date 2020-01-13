@@ -1,9 +1,13 @@
 <template>
   <v-app>
-    <ui-status-bar ref="statusBar" />
-    <ui-menu-bar />
+
+    <header>
+      <ui-status-bar ref="statusBar" />
+      <ui-menu-bar v-on:open:additional="onOpenAdditionalMenu" />
+    </header>
 
     <ui-rules-dialog />
+    <ui-additional-menu ref="additionalMenu" />
 
     <v-content ref="slotGameContainer">
       <slot>
@@ -12,7 +16,9 @@
       </slot>
     </v-content>
 
+
     <ui-spin-bar ref="spinBar" v-on:spin-button-pressed="onSpinButtonPressed" v-on:stop-spin-button-pressed="onStopSpinButtonPressed" />
+
   </v-app>
 </template>
 
@@ -21,6 +27,7 @@ import UiStatusBar from "./sub/UiStatusBar";
 import UiMenuBar from "./sub/UiMenuBar";
 import UiSpinBar from "./sub/UiSpinBar";
 import UiRulesDialog from "./sub/UiRulesDialog";
+import UiAdditionalMenu from "./sub/UiAdditionalMenu";
 
 export default {
   name: "InGameUi",
@@ -29,7 +36,8 @@ export default {
     UiStatusBar,
     UiMenuBar,
     UiSpinBar,
-    UiRulesDialog
+    UiRulesDialog,
+    UiAdditionalMenu
   },
 
   data: () => ({
@@ -69,6 +77,9 @@ export default {
     },
     onStopSpinButtonPressed() {
       this.$emit(events.stopSpinButtonPressed);
+    },
+    onOpenAdditionalMenu() {
+      this.$refs.additionalMenu.open();
     },
     endSpin() {
       this.$refs.spinBar.endSpin();

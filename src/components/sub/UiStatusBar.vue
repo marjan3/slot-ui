@@ -1,12 +1,9 @@
 <template>
-  <v-system-bar dark color="black" class="white--text" justify="space-around">
+  <v-system-bar style="width: 100%" short color="black" class="white--text" justify="space-around">
     <!-- <v-icon>mdi-gmail</v-icon> -->
-    <span class="static-text">{{ gameName | uppercase }}</span>
     <span class="static-text">{{ companyName | uppercase }}</span>
+    <span class="static-text">{{ gameName }}</span>
     <v-spacer></v-spacer>
-    <!-- <v-icon>mdi-wifi-strength-4</v-icon>
-    <v-icon>mdi-signal-cellular-outline</v-icon>
-    <v-icon>mdi-battery</v-icon>-->
     <clock />
   </v-system-bar>
 </template>
@@ -18,8 +15,8 @@ import Clock from "./Clock";
 export default {
   data: function() {
     return {
-      gameName: "Cute Spins ™",
-      companyName: "NetEnt"
+      gameName: "Cute Spins - 1.18.48, Engine - 1.5.0",
+      companyName: "Wow |"
     };
   },
   methods: {

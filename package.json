@@ -19,6 +19,7 @@
     "@mtanevski/observable": "^0.0.3",
     "core-js": "^3.3.2",
     "roboto-fontface": "*",
+    "svg.js": "^2.7.1",
     "vue": "^2.6.10",
     "vuetify": "^2.1.0"
   },

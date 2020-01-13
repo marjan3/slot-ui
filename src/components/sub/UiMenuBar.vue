@@ -1,5 +1,5 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-  <v-toolbar height="48px" max-height="48px" light color="transparent" dense flat short>
+  <v-toolbar style="top: 24px" short absolute width="100%" top transparent flat color="transparent">
     <v-btn icon @click="onHomeButtonClick">
       <v-icon>mdi-home</v-icon>
     </v-btn>
