@@ -44,14 +44,6 @@ yarn example
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Usage guide
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-## Download
-
-- The application is now available as a JAR file. Within the `dist/` directory of this repository the executable JAR file can be found.
-
 ## Future changes
 
 - Improve usability
