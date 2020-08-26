@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "example": "cd example/ && yarn start",
-    "build:prod": "rm -rf dist/ && vue-cli-service build --target lib --name slot-ui src/slot-ui.js"
+    "build:prod": "vue-cli-service build --target lib --name slot-ui src/slot-ui.js"
   },
   "license": "MIT",
   "main": "./dist/slot-ui.common.js",

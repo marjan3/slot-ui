@@ -1,11 +1,22 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-  <v-toolbar style="top: 24px" short absolute width="100%" top transparent flat color="transparent">
+  <v-toolbar
+    style="top: 24px"
+    short
+    absolute
+    width="100%"
+    top
+    transparent
+    flat
+    color="transparent"
+  >
     <v-btn icon @click="onHomeButtonClick">
       <v-icon>mdi-home</v-icon>
     </v-btn>
     <v-spacer></v-spacer>
     <v-btn icon @click="onFullScreenButtonClick">
-      <v-icon>{{ fullscreen ? "mdi-fullscreen": "mdi-fullscreen-exit"}}</v-icon>
+      <v-icon>{{
+        fullscreen ? 'mdi-fullscreen' : 'mdi-fullscreen-exit'
+      }}</v-icon>
     </v-btn>
     <v-btn icon @click="onInformationButtonClick">
       <v-icon>mdi-information</v-icon>
@@ -14,7 +25,7 @@
       <v-icon>mdi-history</v-icon>
     </v-btn>-->
     <v-btn icon @click="onVolumeButtonClick">
-      <v-icon>{{ sound ? "mdi-volume-high": "mdi-volume-off"}}</v-icon>
+      <v-icon>{{ sound ? 'mdi-volume-high' : 'mdi-volume-off' }}</v-icon>
     </v-btn>
     <v-menu offset-y bottom>
       <template v-slot:activator="{ on }">
@@ -26,7 +37,7 @@
         </v-btn>
       </template>
       <v-list>
-        <template v-for="(item, index) in notifications">
+        <template v-for="item in notifications">
           <v-list-item v-if="item" :key="item" @click="true">
             <v-list-item-action>
               <v-icon>mdi-email</v-icon>
@@ -37,7 +48,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-divider v-else-if="item" :key="index" :inset="inset"></v-divider>
+          <!-- <v-divider v-else-if="item" :key="index" :inset="inset"></v-divider> -->
         </template>
       </v-list>
     </v-menu>
@@ -48,7 +59,11 @@
         </v-btn>
       </template>
       <v-list scrollable>
-        <v-list-item v-for="(language, index) in languages" :key="index" @click="true">
+        <v-list-item
+          v-for="(language, index) in languages"
+          :key="index"
+          @click="true"
+        >
           <v-list-item-title>
             <v-icon>mdi-earth</v-icon>
           </v-list-item-title>
@@ -68,25 +83,25 @@ export default {
     return {
       sound: true,
       fullscreen: false,
-      notifications: ["Test", "Test 1", "Test 2", "Test 3"],
+      notifications: ['Test', 'Test 1', 'Test 2', 'Test 3'],
       languages: [
-        "MK",
-        "USD",
-        "EU",
-        "WHAT",
-        "MK",
-        "USD",
-        "EU",
-        "WHAT",
-        "MK",
-        "USD",
-        "EU",
-        "WHAT",
-        "MK",
-        "USD",
-        "EU",
-        "WHAT"
-      ]
+        'MK',
+        'USD',
+        'EU',
+        'WHAT',
+        'MK',
+        'USD',
+        'EU',
+        'WHAT',
+        'MK',
+        'USD',
+        'EU',
+        'WHAT',
+        'MK',
+        'USD',
+        'EU',
+        'WHAT',
+      ],
     };
   },
   methods: {
@@ -115,18 +130,17 @@ export default {
     },
     setLanguages: function(languages) {
       this.$data.languages = languages;
-    }
-  }
+    },
+  },
 };
 
 export const events = {
-  goHome: "go:home",
-  toggleFullscreen: "toggle:fullscreen",
-  openRules: "open:rules",
-  toggleSound: "toggle:sound",
-  openNotifications: "open:notifications",
-  openAdditional: "open:additional",
-  openLanguages: "open:languages"
+  goHome: 'go:home',
+  toggleFullscreen: 'toggle:fullscreen',
+  openRules: 'open:rules',
+  toggleSound: 'toggle:sound',
+  openNotifications: 'open:notifications',
+  openAdditional: 'open:additional',
+  openLanguages: 'open:languages',
 };
 </script>
-
