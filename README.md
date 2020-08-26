@@ -1,6 +1,14 @@
 # Slot UI
 
-Simple UI for slot games
+> **Slot UI** is a video slot game user interface. Its a simple and elegant UI. Its meant to be ran along with a slot game. The slot game will be contained inside the frame of the slot ui.
+
+![Image](screenshot1.png)
+<br/>
+![Image](screenshot2.png)
+
+## Getting started
+
+To get a local copy up and running follow these simple example steps.
 
 ## Project setup
 

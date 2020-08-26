@@ -29,7 +29,7 @@
       </div>
     </div>
     <v-spacer />
-    <!-- <svg class="spin-button" width="120px" height="100px" viewBox="0 0 284 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <svg class="spin-button" width="120px" height="100px" viewBox="0 0 284 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
         <g id="SpinV1">
             <rect id="background" x="0" y="14.16" width="186.101" height="168.329" style="fill:#ffda46;"/>
             <g id="quickSpinButton" @click="onQuickSpinButtonClick">
@@ -68,7 +68,7 @@
                 <path id="stopIcon" d="M224.899,60.561c-14.922,-8.178 -68.081,-8.02 -80.245,0c-5.157,13.471 -4.802,62.953 0.24,74.339c26.254,6.998 52.166,7.246 80.005,0c5.206,-14.637 5.582,-64.251 0,-74.339Z" style="fill:#252d36;" fill-opacity="0"/>
             </g>
         </g>
-    </svg>-->
+    </svg>
     <div class="text-center">
       <v-btn class="mx-2" fab dark medium color="primary">
         <v-icon dark>mdi-play-circle</v-icon>

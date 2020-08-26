@@ -10,10 +10,18 @@
       >
         <v-row class="fill-height" align-content="center" justify="center">
           <v-col cols="12" class="display-2 text-center">COMPANY</v-col>
-          <v-col cols="8">
+          <v-img
+            alt="logo"
+            max-width="100px"
+            max-height="100px"
+            src="../assets/logo.png"
+          ></v-img>
+          <!-- <v-col cols="8">
             <v-progress-linear color="amber accent-4" :value="progressValue" rounded height="6"></v-progress-linear>
-          </v-col>
-          <v-col class="subtitle-1 text-center" cols="12">{{ progressReason }}</v-col>
+          </v-col> -->
+          <v-col class="subtitle-1 text-center" cols="12"
+            ><loading-dots
+          /></v-col>
         </v-row>
       </v-container>
     </v-fade-transition>
@@ -21,14 +29,20 @@
 </template>
 
 <script>
+import LoadingDots from './sub/LoadingDots';
+
 export default {
-  name: "LoadingScreen",
+  name: 'LoadingScreen',
+
+  components: {
+    LoadingDots,
+  },
 
   data() {
     return {
       progressValue: 0,
-      progressReason: "",
-      loading: true
+      progressReason: '',
+      loading: true,
     };
   },
   methods: {
@@ -41,11 +55,11 @@ export default {
           this.$emit(events.loadingFinished);
         }, 300);
       }
-    }
-  }
+    },
+  },
 };
 
 export const events = {
-  loadingFinished: "loading-finished"
+  loadingFinished: 'loading-finished',
 };
 </script>

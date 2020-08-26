@@ -20,7 +20,7 @@
       <template v-slot:activator="{ on }">
         <v-btn icon @click="onNotificationsButtonClick" v-on="on">
           <v-badge>
-            <template v-slot:badge>0</template>
+            <template v-slot:badge>2</template>
             <v-icon>mdi-bell</v-icon>
           </v-badge>
         </v-btn>
