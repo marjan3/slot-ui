@@ -62,8 +62,8 @@
             color="yellow darken-2"
             @click="onFastSpinButtonClick"
           >
-            <v-icon v-if="fab">mdi-close</v-icon>
-            <v-icon dark v-else>mdi-plus</v-icon>
+            <v-icon v-if="fab">{{ mdiClose }}</v-icon>
+            <v-icon dark v-else>{{ mdiPlus }}</v-icon>
           </v-btn>
         </template>
 
@@ -76,7 +76,7 @@
           color="yellow darken-2"
           @click="onFastSpinButtonClick"
         >
-          <v-icon dark>{{ !fastSpin ? 'mdi-flash' : 'mdi-flash-off' }}</v-icon>
+          <v-icon dark>{{ !fastSpin ? mdiFlash : mdiFlashOff }}</v-icon>
         </v-btn>
 
         <v-dialog v-model="autoSpinsDialog" max-width="290">
@@ -91,7 +91,7 @@
               medium
               color="yellow darken-2"
             >
-              <v-icon dark>mdi-play-circle</v-icon>
+              <v-icon dark>{{ mdiPlayCircle }} </v-icon>
             </v-btn>
           </template>
           <v-card>
@@ -129,7 +129,7 @@
             >
                 <v-btn class="mx-2" fab dark x-large color="yellow darken-2" @click="onSpinButtonClick">
                     <v-icon dark>
-                        {{ !spinning ? "mdi-repeat": "mdi-stop"}}
+                        {{ !spinning ? mdiRepeat : mdiStop }}
                     </v-icon>
                 </v-btn>
             </v-progress-circular> -->
@@ -143,7 +143,7 @@
         @click="onSpinButtonClick"
       >
         <v-icon dark>
-          {{ !spinning ? 'mdi-repeat' : 'mdi-stop' }}
+          {{ !spinning ? mdiRepeat : mdiStop }}
         </v-icon>
       </v-btn>
     </div>
@@ -151,9 +151,26 @@
 >1
 
 <script>
+import {
+  mdiRepeat,
+  mdiStop,
+  mdiClose,
+  mdiPlus,
+  mdiFlash,
+  mdiFlashOff,
+  mdiPlayCircle
+} from '@mdi/js';
+
 export default {
   data: function() {
     return {
+      mdiRepeat,
+      mdiStop,
+      mdiClose,
+      mdiPlus,
+      mdiFlash,
+      mdiFlashOff,
+      mdiPlayCircle,
       autoSpinsDialog: false,
       autoSpinning: false,
       autoSpin: {

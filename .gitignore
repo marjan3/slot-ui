@@ -2,3 +2,9 @@ dist
 .idea
 node_modules
 package-lock.json
+example/node_modules
+example/yarn.lock
+example/yarn-error.log
+example/.cache
+yarn.lock
+yarn-error.log

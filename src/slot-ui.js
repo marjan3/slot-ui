@@ -1,7 +1,7 @@
-import Vue from "vue";
-import App from "./App.vue";
-import vuetify from "./plugins/vuetify";
-import Observable from "@mtanevski/observable";
+import Observable from '@mtanevski/observable';
+import Vue from 'vue';
+import App from './App.vue';
+import vuetify from './plugins/vuetify';
 
 export const SlotUi = (() => {
   class GameUi {
@@ -15,9 +15,7 @@ export const SlotUi = (() => {
     }
 
     $mount(elementOrSelector) {
-      require("vuetify/dist/vuetify.min.css");
-      require("roboto-fontface/css/roboto/roboto-fontface.css");
-      require("@mdi/font/css/materialdesignicons.css");
+      require('vuetify/dist/vuetify.min.css');
       Vue.config.productionTip = false;
       // The plugin is loaded here.
       Vue.use(
@@ -26,7 +24,7 @@ export const SlotUi = (() => {
           // It takes the global Vue object as well as user-defined options.
           install(Vue, uiOptions) {
             Vue.prototype.$uiOptions = uiOptions;
-          }
+          },
         },
         this.uiOptions
       );
@@ -36,14 +34,14 @@ export const SlotUi = (() => {
           // It takes the global Vue object as well as user-defined options.
           install(Vue, observable) {
             Vue.prototype.$observable = observable;
-          }
+          },
         },
         this.observable
       );
 
       this._app = new Vue({
         vuetify,
-        render: h => h(App)
+        render: (h) => h(App),
       }).$mount(elementOrSelector);
 
       return this;
@@ -57,22 +55,21 @@ export const SlotUi = (() => {
   return { GameUi };
 })();
 
-if(process.env.NODE_ENV !== "production"){
+if (process.env.NODE_ENV !== 'production') {
   const options = {
-    id: "yet-another-slot-game"
+    id: 'yet-another-slot-game',
   };
 
-  const gameUi = new SlotUi.GameUi(options).$mount("#app");
-  gameUi.observable.on("spinStarted", () => {
-    window.console.log("spin started");
+  const gameUi = new SlotUi.GameUi(options).$mount('#app');
+  gameUi.observable.on('spinStarted', () => {
+    window.console.log('spin started');
   });
 
-  gameUi.observable.on("loadingFinished", () => {
-    window.console.log("loading finished");
+  gameUi.observable.on('loadingFinished', () => {
+    window.console.log('loading finished');
   });
 
   window.gameUi = gameUi;
 
-  gameUi.observable.emit("updateLoading", { reason: "end", value: 100 });
+  gameUi.observable.emit('updateLoading', { reason: 'end', value: 100 });
 }
-

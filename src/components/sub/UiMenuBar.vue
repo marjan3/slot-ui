@@ -10,29 +10,27 @@
     color="transparent"
   >
     <v-btn icon @click="onHomeButtonClick">
-      <v-icon>mdi-home</v-icon>
+      <v-icon>{{ mdiHome }}</v-icon>
     </v-btn>
     <v-spacer></v-spacer>
     <v-btn icon @click="onFullScreenButtonClick">
-      <v-icon>{{
-        fullscreen ? 'mdi-fullscreen' : 'mdi-fullscreen-exit'
-      }}</v-icon>
+      <v-icon>{{ fullscreen ? mdiFullscreen : mdiFullscreenExit }}</v-icon>
     </v-btn>
     <v-btn icon @click="onInformationButtonClick">
-      <v-icon>mdi-information</v-icon>
+      <v-icon>{{ mdiInformation }}</v-icon>
     </v-btn>
     <!-- <v-btn icon>
-      <v-icon>mdi-history</v-icon>
+      <v-icon>{{ mdiHistory }}</v-icon>
     </v-btn>-->
     <v-btn icon @click="onVolumeButtonClick">
-      <v-icon>{{ sound ? 'mdi-volume-high' : 'mdi-volume-off' }}</v-icon>
+      <v-icon>{{ sound ? mdiVolumeHigh : mdiVolumeOff }}</v-icon>
     </v-btn>
     <v-menu offset-y bottom>
       <template v-slot:activator="{ on }">
         <v-btn icon @click="onNotificationsButtonClick" v-on="on">
           <v-badge>
             <template v-slot:badge>2</template>
-            <v-icon>mdi-bell</v-icon>
+            <v-icon>{{ mdiBell }}</v-icon>
           </v-badge>
         </v-btn>
       </template>
@@ -40,7 +38,7 @@
         <template v-for="item in notifications">
           <v-list-item v-if="item" :key="item" @click="true">
             <v-list-item-action>
-              <v-icon>mdi-email</v-icon>
+              <v-icon>{{ mdiEmail }}</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -55,7 +53,7 @@
     <v-menu offset-y>
       <template v-slot:activator="{ on }">
         <v-btn icon @click="onLanguagesMenuButtonClick" v-on="on">
-          <v-icon>mdi-earth</v-icon>
+          <v-icon>{{ mdiEarth }}</v-icon>
         </v-btn>
       </template>
       <v-list scrollable>
@@ -65,22 +63,45 @@
           @click="true"
         >
           <v-list-item-title>
-            <v-icon>mdi-earth</v-icon>
+            <v-icon>{{ mdiEarth }}</v-icon>
           </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
     <v-btn icon @click="onAdditionalMenuButtonClick">
-      <v-icon>mdi-menu</v-icon>
+      <v-icon>{{ mdiMenu }}</v-icon>
     </v-btn>
   </v-toolbar>
 </template>
 
 <script>
+import {
+  mdiMenu,
+  mdiEarth,
+  mdiEmail,
+  mdiBell,
+  mdiInformation,
+  mdiHome,
+  mdiFullscreen,
+  mdiFullscreenExit,
+  mdiVolumeHigh,
+  mdiVolumeOff,
+} from '@mdi/js';
+
 export default {
   // TODO: https://github.com/mirari/vue-fullscreen
   data: function data() {
     return {
+      mdiMenu,
+      mdiEarth,
+      mdiEmail,
+      mdiBell,
+      mdiInformation,
+      mdiFullscreen,
+      mdiFullscreenExit,
+      mdiHome,
+      mdiVolumeHigh,
+      mdiVolumeOff,
       sound: true,
       fullscreen: false,
       notifications: ['Test', 'Test 1', 'Test 2', 'Test 3'],
